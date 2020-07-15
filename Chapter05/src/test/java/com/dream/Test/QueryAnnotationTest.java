@@ -47,17 +47,17 @@ public class QueryAnnotationTest {
 //		}
 //	}
 	
-	@Test
-	public void testQueryAnnottionTest4() {
-		Pageable paging = PageRequest.of(0, 3, Sort.DEFAULT_DIRECTION.DESC, "seq");
-		
-		List<Object[]> boardList = boardRepo.queryAnnotationTest4(paging);
-		
-		System.out.println("검색 결과");
-		for (Object[] row : boardList) {
-			System.out.println("---> " + Arrays.toString(row));
-		}
-	}
+//	@Test
+//	public void testQueryAnnottionTest4() {
+//		Pageable paging = PageRequest.of(0, 3, Sort.DEFAULT_DIRECTION.DESC, "seq");
+//		
+//		List<Object[]> boardList = boardRepo.queryAnnotationTest4(paging);
+//		
+//		System.out.println("검색 결과");
+//		for (Object[] row : boardList) {
+//			System.out.println("---> " + Arrays.toString(row));
+//		}
+//	}
 	
 
 }

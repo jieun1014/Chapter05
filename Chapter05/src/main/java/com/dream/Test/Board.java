@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -15,26 +17,30 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
+@ToString(exclude = "member")
 @Entity
 public class Board {
 	@Id
 	@GeneratedValue
 	private Long seq;
 	
-	@Column(nullable = false)
 	private String title;
 	
-	@Column(nullable = false)
 	private String writer;
 	
-	@Column(nullable = false)
 	private String content;
 	
-	@Column(nullable = false)
 	@Temporal(value = TemporalType.TIMESTAMP)
 	private Date createDate;
 	
-	@Column(nullable = false)
 	private Long cnt;
+	
+	@ManyToOne
+	@JoinColumn(name = "MEMBER_ID", nullable = false)
+	private Member member;
+	
+	public void setMember(Member member) {
+		this.member = member;
+		member.getBoardList().add(this);
+	}
 }
