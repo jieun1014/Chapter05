@@ -78,8 +78,8 @@ public class RelationMappingTest {
 //		}
 //	}
 	
-	@Test
-	public void testCascadeDelete() {
-		memberRepo.deleteById("member2");
-	}
+//	@Test
+//	public void testCascadeDelete() {
+//		memberRepo.deleteById("member2");
+//	}
 }
